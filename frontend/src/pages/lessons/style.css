@@ -1,0 +1,124 @@
+.lessonsWrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.lessonsContainer {
+    height: 90%;
+    width: 60%;
+    background-color: var(--purple);
+    border-radius: 0.6875rem;
+}
+
+.chatContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.chatHeader {
+    height: 7rem;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chatHeaderText {
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Londrina Solid;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-right: 50px;
+}
+
+.chatBody {
+    display: flex;
+    flex-direction: column-reverse;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.chatBodyContainer {
+    height: 100%;
+    background-position: center;
+    background-position-y: top;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+    position: relative;
+
+}
+
+.chatSendMessage {
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chatSendMessageContainer {
+    position: relative;
+    width: 98%;
+}
+
+.chatButton {
+    width: 5.9375rem;
+    height: 2rem;
+    flex-shrink: 0;
+    border-radius: 0.5rem;
+    background: var(--green);
+
+    color: #FFF;
+    font-family: Londrina Solid;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.25rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.nextButton {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+
+.submitButton {
+    top: 3px;
+    right: 5px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.inputMessage {
+    width: -webkit-fill-available;
+    height: 2.1rem;
+    border-radius: 0.6875rem;
+}
+
+.inputMessageContainer {
+    height: 20%;
+    width: 95%
+}
+
+.selectContainer {
+    background-color: #FFF;
+    padding: 5px;
+    border-radius: 0.6875rem;
+}
+
+.disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}

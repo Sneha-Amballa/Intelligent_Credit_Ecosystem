@@ -1,0 +1,231 @@
+  .homePageTitle {
+      color: #FFF;
+      font-family: 'Londrina Solid', cursive;
+      /* Ensure the font is imported or available */
+      font-size: 6rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+      -webkit-text-stroke: 5px var(--purple);
+  }
+
+  .homepageTitleContainer {
+      height: 30rem;
+      background: url(/bg/bg-homepage.png);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .registerButton,
+  .loginButton {
+      display: flex;
+      width: 12.5625rem;
+      height: 5.25rem;
+      padding: 0.5rem 0.875rem;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      flex-shrink: 0;
+
+      border: 0px;
+      border-radius: 1.125rem;
+
+      color: var(--White, #FFF);
+      font-family: Londrina Solid;
+      font-size: 2rem;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.25rem;
+      /* 62.5% */
+
+      box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+  }
+
+  .registerButton {
+      background: #00DA23;
+      text-decoration: none;
+
+  }
+
+  .loginButton {
+      background: #0A007E;
+      text-decoration: none;
+  }
+
+  .buttonContainer {
+      display: flex;
+      justify-content: space-evenly;
+  }
+
+  .introContainer {
+      height: 10rem;
+      display: grid;
+      grid-template-columns: 55% 100px auto;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .diagonal {
+      object-fit: fill;
+      height: 100%;
+      width: 100%;
+  }
+
+  .introTextContainer {
+      background-color: var(--purple);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      padding-left: 15%;
+
+  }
+
+  .introDataContainer {
+      background-color: var(--yellow);
+      padding: 10px;
+      display: flex;
+      align-content: center;
+      align-items: center;
+      justify-content: space-evenly;
+      padding-right: 15%;
+
+  }
+
+  .homePageText,
+  .introDataTitle,
+  .introDataSubTitle {
+      color: #FFF;
+      font-family: Barlow;
+      font-size: 1rem;
+      font-style: normal;
+      font-weight: 600;
+  }
+
+  .introDataContent {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+  .introDataTitle {
+      font-size: 4rem;
+      font-weight: 800;
+      margin: 0;
+
+  }
+
+  .introDataSubTitle {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin: 0;
+  }
+
+  .lessonsContainer {
+      display: flex;
+      justify-content: center
+  }
+
+  .lessonsWrapper {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  @media screen and (max-width: 1000px) {
+    .logo {
+        width: 20rem;
+    }
+
+    .homePageTitle {
+        font-size: 5rem;
+    }
+}
+
+  @media screen and (max-width: 1482px) {
+
+    .homepageTitleContainer {
+        flex-direction: column;
+    }
+
+    .homePageTitle {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .introContainer{
+        display: none;
+    }
+
+    .logo{
+        width: 23rem;
+    }
+
+    .meetFriendsTitle {
+        margin-top: 1rem;
+    }
+
+    .loginButton{
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .registerButton{
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .homepageTitleContainer{
+        height: 36rem;
+    }
+
+}
+
+  @media screen and (max-width: 768px) {
+
+    .homepageTitleContainer {
+        flex-direction: column;
+    }
+
+    .logo{
+        margin-top: 0rem;
+        width: 15rem;
+    }
+
+    .homePageTitle {
+        display: flex;
+        justify-content: center;
+        margin-top: 0.5rem;
+    }
+
+    .introContainer{
+        display: none;
+    }
+
+    .buttonContainer{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loginButton{
+        margin-top: 2rem;
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .registerButton{
+        width: 10rem;
+        height: 4rem;
+    }
+
+    .meetFriendsTitle {
+        margin-top: 4rem;
+        font-size: 3.8rem;
+    }
+
+    .friendText{
+        display: none;
+    }
+    
+    
+}

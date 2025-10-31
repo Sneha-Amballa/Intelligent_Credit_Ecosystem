@@ -1,0 +1,127 @@
+.lessonsWrapper {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.lessonsContainer {
+    height: 90%;
+    width: 70%;
+    background-color: var(--purple);
+    border-radius: 0.6875rem;
+}
+
+.leaderboardContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.leaderboardHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 5rem;
+    background-color: var(--yellow);
+}
+
+.leaderboardHeaderText {
+    color: white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Londrina Solid;
+    font-size: 2.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.leaderboardBody {
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.leaderboardBodyContainer,
+.leaderboardDataForUserWrapper {
+    height: 100%;
+    background-position: center;
+    background-position-y: top;
+    scroll-snap-type: y mandatory;
+    overflow: hidden;
+    position: relative;
+}
+
+.leaderboardText,
+.leaderboardTextyellow {
+    color: var(--purple);
+    font-family: Londrina Solid;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: white;
+    text-align: center;
+    padding: 0.6rem;
+}
+
+.leaderboardTextyellow {
+    background-color: var(--yellow);
+}
+
+.leaderboardHeaderText {
+    color: var(--gold, #FFC700);
+    font-family: Londrina Solid;
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+}
+
+.leaderboardGrid,
+.leaderboardDataForUserGrid {
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2.5rem auto 30% 15%;
+    grid-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.leaderboardDataForUserGrid {
+    padding-top: 1rem;
+    border-top: 1px solid white
+}
+
+.leaderboardDataForUserContainer {
+    display: flex;
+    justify-content: center
+}
+
+.filtersText {
+    color: var(--purple);
+    font-family: "Londrina Solid";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 5px;
+}
+
+.filterButton {
+    text-align: center;
+    height: 23px;
+    width: 60px;
+    color: white;
+    background-color: var(--purple);
+    font-family: "Londrina Solid";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border-radius: 0.4875rem;
+    cursor: pointer;
+}

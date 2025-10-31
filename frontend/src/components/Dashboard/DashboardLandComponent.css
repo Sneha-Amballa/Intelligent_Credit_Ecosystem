@@ -1,0 +1,44 @@
+.landImage {
+    height: 12rem;
+    max-width: 21rem;
+    border-radius: 0.6875rem;
+}
+
+.landContainer {
+    max-width: 21rem;
+    overflow: hidden;
+}
+
+.nameContainer {
+    background-color: var(--purple);
+    height: 5.5rem;
+    border-radius: 0rem 0rem 0.6875rem 0.6875rem;
+    margin-top: -15px;
+    z-index: 5;
+    position: relative;
+}
+
+.name {
+    padding: 10px 10px 0px 10px;
+    margin: 0;
+    color: var(--gold, #FFC700);
+    font-family: Londrina Solid;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.landImageFreind {
+    height: 12rem;
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+}
+
+.landProgress {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 15px;
+    color: green;
+}

@@ -1,0 +1,145 @@
+html {
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffc700;
+  height: 4.0625rem;
+  /* 65px converted to rem */
+  width: 80%;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffc700;
+}
+
+#logo {
+  background: #ffc700;
+  width: 100%;
+  /* 250px converted to rem */
+  height: 2.8125rem;
+  /* 45px converted to rem */
+  top: 0.6875rem;
+  /* 11px converted to rem */
+  /* 200px converted to rem */
+  border: 0.125rem;
+  /* 2px converted to rem */
+  display: flex;
+  align-items: center;
+}
+
+.color {
+  background: #ffc700;
+}
+
+#logo h3 {
+  background: #ffc700;
+  font-family: Londrina Solid;
+  font-size: 2rem;
+  /* 32px converted to rem */
+  font-weight: 400;
+  line-height: 2.375rem;
+  /* 38px converted to rem */
+  letter-spacing: 0em;
+  text-align: left;
+  color: white;
+  -webkit-text-stroke: 0.125rem var(--purple);
+  /* 2px converted to rem */
+  padding-left: 0.625rem;
+  /* 10px converted to rem */
+}
+
+#logo img {
+  background: #ffc700;
+  width: 50px;
+  /* 45.57px converted to rem */
+  height: 2.8125rem;
+  /* 45px converted to rem */
+}
+
+#navbar {
+  background: #ffc700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 200px converted to rem */
+  width: 100%;
+  /* 565px converted to rem */
+  height: 1.1875rem;
+  /* 19px converted to rem */
+}
+
+#navbar .navbarElement {
+  background: #ffc700;
+  list-style: none;
+  padding: 0 1.25rem;
+  /* 20px converted to rem */
+  font-family: Inter;
+  font-size: 1rem;
+  /* 16px converted to rem */
+  font-weight: 400;
+  line-height: 1.1875rem;
+  /* 19px converted to rem */
+  letter-spacing: 0em;
+  text-align: left;
+  position: relative;
+}
+
+#navbar .navbarElement a {
+  background: #ffc700;
+  text-decoration: none;
+  color: #2000a0;
+}
+
+#navbar #logout a {
+  text-wrap: nowrap;
+  text-decoration: none;
+  color: #c40000;
+}
+
+@media screen and (max-width: 1000px) {
+  nav {
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 774px) {
+
+  nav {
+    flex-wrap: wrap;
+    height: 5.8rem;
+    justify-content: center;
+  }
+
+  #logo{
+    margin: 0.5rem 0;
+  }
+  
+  #navbar{
+    margin: 0.5rem 0;
+    justify-content: center;
+  }
+
+}
+
+@media screen and (max-width: 550px) {
+
+  .navbarElement a{
+    font-size: 0.7rem;
+  }
+
+}
+
+@media screen and (max-width: 375px) {
+
+  .navbarElement a{
+    font-size: 0.5rem;
+  }
+
+}

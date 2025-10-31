@@ -1,0 +1,14 @@
+.curved-progress-bar {
+  width: 100%;
+  height: auto;
+}
+
+.background {
+  fill: #ddd;
+}
+
+.progress {
+  fill: #4caf50;
+  /* Change color as needed */
+  transition: d 0.3s ease-in-out;
+}

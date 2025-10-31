@@ -1,0 +1,107 @@
+body.active-modal {
+  overflow-y: hidden;
+}
+
+.btn-modal {
+  cursor: pointer;
+  color: #fff;
+  font-family: Londrina Solid;
+  font-weight: 300;
+  font-size: 1.25rem;
+  background-color: #2000A0;
+  border: 0;
+}
+
+.modal,
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+
+.modal-content {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  line-height: 1.4;
+  background: #f1f1f1;
+  padding: 14px 28px;
+  border-radius: 3px;
+  max-width: 600px;
+  min-width: 300px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+  background-color: #2000A0;
+  color: #fff;
+  font-family: Londrina solid;
+  letter-spacing: 0em;
+  font-weight: 300;
+}
+
+.inputField {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  font-family: Londrina solid;
+  font-weight: 300;
+  border: 2px;
+}
+
+.updateButton {
+  font-family: Londrina Solid;
+  background-color: #00FF66;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.updateButton:hover {
+  background-color: #45a049;
+}
+
+.errorMsg {
+  color: red;
+  margin-top: 10px;
+}
+
+h2 {
+  color: #FFC700;
+  font-weight: 400;
+}
+
+.btn-yes-no {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.yesbtn {
+  background-color: #00FF66;
+  width: 2.5rem;
+}
+
+.nobtn {
+  background-color: red;
+  width: 2.5rem;
+}
+
+.reset-txt {
+  color: black;
+}

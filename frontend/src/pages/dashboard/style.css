@@ -1,0 +1,42 @@
+.dashboardWrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0rem;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.dashboardContainer {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-gap: 5rem;
+}
+
+.welcomeBackcontainer {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0rem;
+    width: 80%;
+}
+
+.welcomeBackText {
+    color: var(--purple);
+    font-family: "Londrina Solid";
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0;
+}
+
+.welcomeBackSubText {
+    color: var(--purple);
+    font-family: "Londrina Solid";
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    margin: 5px;
+}

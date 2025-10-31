@@ -1,0 +1,15 @@
+:root {
+  --purple: #2000A0;
+  --yellow: #FFC700;
+  --green: #00C34E;
+  --red: #C40000;
+  --paleGold: #FFE99A;
+
+
+  --primary: 252 100% 31%;
+  --primary-foreground: 252 100% 31%;
+}
+
+body {
+  margin: 0;
+}

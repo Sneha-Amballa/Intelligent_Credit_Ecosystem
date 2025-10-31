@@ -1,0 +1,578 @@
+.my-profile {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.625rem;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.my-profile h3 {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2000A0;
+}
+
+.user-info-details img {
+    width: 8.875rem;
+    border-radius: 12.5rem;
+    border: 0.25rem;
+}
+
+.profile-info-settings {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    align-items: center;
+    background-color: antiquewhite;
+    height: 15.625rem;
+    background: url('/bg/bg-profile.png') center/cover no-repeat;
+}
+
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.h3-title {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2000A0;
+    margin: 0 0 20px 0;
+}
+
+.user-info-details {
+    display: flex;
+    align-items: center;
+}
+
+#user-info-text-details ul {
+    margin: 0;
+}
+
+#user-info-text-details li {
+    list-style: none;
+    font-family: Londrina Solid;
+    font-weight: 300;
+}
+
+#user-info-text-details h3 {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    padding-left: 2.5rem;
+    margin: 0;
+}
+
+.settings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 22.8125rem;
+    height: 12.5625rem;
+    margin: 0;
+}
+
+.settings h3 {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFC700;
+    margin: 0 0 30px 25px;
+}
+
+.settings ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.settings li {
+    list-style: none;
+    font-family: Londrina Solid;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: white;
+}
+
+.all-stats-bars {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #2000A0;
+    height: 18rem;
+}
+
+.text-total-bar h3 {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFC700;
+
+}
+
+.text-total-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 17rem;
+    padding: 0 0 0 11.25rem;
+}
+
+
+#prog-bar1 .bar {
+    z-index: 1;
+    border-radius: 15px;
+    color: #FFC700;
+}
+
+.text-total-bar .element {
+    position: relative;
+    padding: 5px;
+    margin-left: 5rem;
+}
+
+.all-stats-bars .element .progress-text {
+    position: absolute;
+    z-index: 2;
+    padding-left: 4.5rem;
+    top: 2.5rem;
+    width: 10rem;
+    text-align: center;
+    right: 0rem;
+}
+
+.all-stats-bars .element .percentage {
+    position: absolute;
+    z-index: 2;
+    padding-left: 4.5rem;
+    top: 4rem;
+    width: 10rem;
+    text-align: center;
+    right: 0rem;
+}
+
+.percentage p {
+    font-family: Londrina Solid;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+}
+
+.progress-text p {
+    font-family: Londrina Solid;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #00FF66;
+}
+
+.each-land-bar {
+    margin-top: 7rem;
+
+    margin-right: 10rem;
+}
+
+.each-land-bar ul {
+    padding-left: 4rem;
+    margin-top: 2rem;
+}
+
+.each-land-bar ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.each-land-bar li {
+    list-style: none;
+    width: 8.75rem;
+    position: relative;
+}
+
+.each-land-bar .bar {
+    z-index: 1;
+}
+
+.land-text {
+    position: absolute;
+    z-index: 2;
+    top: 2rem;
+    right: 0.3rem;
+    text-align: center;
+    width: 7rem;
+}
+
+.land-text p {
+    font-family: Londrina Solid;
+    font-size: 13.5px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FFC700;
+}
+
+#prog-bar2 .percentage {
+    position: absolute;
+    z-index: 2;
+    padding-left: 4.5rem;
+    top: 3rem;
+    width: 10rem;
+    text-align: center;
+    right: -1.3rem;
+}
+
+#prog-bar2 .percentage p {
+    font-family: Londrina Solid;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+
+.point-count {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 9.8125rem;
+    background-color: #FFC700;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.points-overall {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 17rem;
+    padding: 0 0 0 13.125rem;
+}
+
+.points-overall h3 {
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #2000A0;
+    margin: 0;
+}
+
+.points-overall .element {
+    margin: 0 0 0 8rem;
+}
+
+.points-overall p {
+    margin: 0;
+    font-family: Londrina Solid;
+    font-size: 2.0625rem;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.points-overall #overall-numb {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.points-overall #overall-txt {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.land-points {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 105px;
+    margin-right: 190px;
+    padding-left: 6rem;
+}
+
+.each-land-points {
+    font-family: Londrina Solid;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.land-points p {
+    margin: 0.5rem 0 0 0;
+    color: #2000A0;
+}
+
+.each-land-txt {
+    font-family: Londrina Solid;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+
+}
+
+.quizzes {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(90deg, #2000A0 13.47%, #FFC700 81.57%);
+}
+
+
+
+
+
+#quizzes-text {
+    display: flex;
+    justify-content: flex-end;
+    width: 35rem;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#quizzes-text h3 {
+    font-family: Londrina Solid;
+    font-size: 33px;
+    font-weight: 400;
+    line-height: 39px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #FFC700;
+}
+
+.group {
+    display: flex;
+    justify-content: flex-start;
+    width: 130rem;
+    gap: 15rem;
+    margin-top: 3rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+#incorrect-answers {
+    margin-top: 3rem;
+}
+
+#incorrect-answers p {
+    margin: 0 0 5px 0;
+    padding: 0 0 0 0;
+}
+
+.incorrect-answers-num {
+    font-family: Londrina Solid;
+    font-family: Londrina Solid;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FF0000;
+}
+
+.incorrect-answers-txt {
+
+    font-family: Londrina Solid;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #FF0000;
+    width: 5rem;
+}
+
+#correct-answers {
+    margin-top: 3rem;
+}
+
+#correct-answers p {
+    margin: 0 0 5px 0;
+}
+
+.correct-answers-num {
+    font-family: Londrina Solid;
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #00FF66;
+}
+
+.correct-answers-txt {
+
+    font-family: Londrina Solid;
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #00FF66;
+    width: 5rem;
+}
+
+.group #prog-bar1 {
+    position: relative;
+}
+
+.group .prog-bar1 .bar {
+    z-index: 1;
+}
+
+.group .progress-text {
+    position: absolute;
+    z-index: 2;
+    top: 3.7rem;
+    left: 2.4rem;
+    font-family: Londrina Solid;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #00FF66;
+}
+
+.group .percentage {
+    position: absolute;
+    z-index: 2;
+    top: 5rem;
+    left: 5.5rem;
+    font-family: Londrina Solid;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #fff;
+}
+
+@media (max-width: 1245px) {
+
+
+    .each-land-bar {
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        margin-right: 10rem;
+    }
+
+    .each-land-bar ul {
+        display: inline-grid;
+        grid-template-columns: 200px 200px 200px;    /* Column sizes */
+        
+    }
+
+    .each-land-bar ul  li:nth-child(4) {
+        
+    }
+    
+
+
+}
+
+@media (max-width: 1032px) {
+    
+    .all-stats-bars {
+        height:340px;
+    }
+    .each-land-bar {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        margin-right: 10rem;
+        
+    }
+    .each-land-bar ul {
+        display: inline-grid;
+        grid-template-columns: 12.5rem 12.5rem;    /* Column sizes */
+        
+    }
+
+    .point-count {
+        height:12rem;
+        justify-content: space-evenly;
+    }
+
+    .land-points {
+        display: inline-grid;
+        grid-template-columns: 8.333rem 8.333rem 8.333rem;
+        gap:0.5rem;
+        margin-bottom: 1rem;
+    }
+
+
+    .group {
+        justify-content:space-around;
+        gap: 0;
+    }
+
+
+}
+
+@media (max-width: 795px) {
+    .all-stats-bars {
+        height:16.5rem;
+    }
+    .bar2 {
+        display:none;
+    }
+    .each-land-bar {
+        margin-bottom: 7rem;
+    }
+
+    .each-land-bar ul {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0rem;
+    }
+    .each-land-bar ul li {
+        margin-bottom: 1rem;
+    }
+    .profile-info-settings {
+        flex-direction: column;
+        height: 26.5rem;
+        background: url('/bg/bg-profile-2.png') center/cover no-repeat;
+    }
+
+    .land-points {
+        display: inline-grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap:1rem;
+    }
+}
