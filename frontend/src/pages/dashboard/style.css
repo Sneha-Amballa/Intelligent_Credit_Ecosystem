@@ -40,3 +40,102 @@
     line-height: normal;
     margin: 5px;
 }
+
+/* ----------------------------
+   🌈 Global Styles
+---------------------------- */
+:root {
+  --purple: #4b0082;
+  --gold: #ffc700;
+  --light-bg: #fafafa;
+  --dark-text: #333;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Londrina Solid", sans-serif;
+  background-color: var(--light-bg);
+  color: var(--dark-text);
+  scroll-behavior: smooth;
+}
+
+/* ----------------------------
+   🧭 Navbar
+---------------------------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 1rem 3rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-logo {
+  font-size: 1.8rem;
+  color: var(--purple);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  text-decoration: none;
+  color: var(--dark-text);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.navbar-links a:hover {
+  color: var(--purple);
+}
+
+/* ----------------------------
+   🔍 Search & Buttons
+---------------------------- */
+.search-bar {
+  border: 1px solid #ccc;
+  border-radius: 1.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  width: 14rem;
+}
+
+.btn-primary {
+  background-color: var(--purple);
+  color: var(--gold);
+  border: none;
+  border-radius: 1.5rem;
+  padding: 0.6rem 1.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: #5d00a2;
+}
+
+/* ----------------------------
+   🦶 Footer
+---------------------------- */
+.footer {
+  background-color: var(--purple);
+  color: var(--gold);
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}

@@ -20,7 +20,7 @@ function Navbar() {
               <img src="/favicon.ico" alt="Icon" />
             </Link>
             <Link href="/dashboard" passHref legacyBehavior>
-              <h3>FinanceFriends</h3>
+              <h3>FinGenie</h3>
             </Link>
           </div>
 

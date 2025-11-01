@@ -18,7 +18,7 @@ function HomePage() {
       <div className="homepageTitleContainer">
         <img src="/icons/logo.png" alt="logo" className="logo"/>
         <div>
-          <h1 className="homePageTitle">FinanceFriends</h1>
+          <h1 className="homePageTitle">FinGenie</h1>
           <div className="buttonContainer">
             <Link href="/register" legacyBehavior>
               <a className="registerButton">Register</a>
@@ -29,43 +29,37 @@ function HomePage() {
           </div>
         </div>
       </div>
-      <div>
-        <div className="introContainer">
-          <div className="introTextContainer">
-            <p className="homePageText">
-              This revolutionary chatbot is designed to engage and educate
-              children in the nuances of financial literacy. Utilizing
-              sophisticated artificial intelligence, Finance Friends offers
-              interactive, personalized learning experiences, making complex
-              financial concepts accessible and enjoyable for the younger
-              generation. By blending advanced technology with child-friendly
-              content, we&apos;re setting a new standard in empowering the
-              financial leaders of tomorrow.
-            </p>
-          </div>
-          <div className="">
-            <img
-              className="diagonal"
-              src="/bg/bg-intro-diagonal.png"
-              alt="logo"
-            />
-          </div>
-          <div className="introDataContainer">
-            <div className="introDataContent">
-              <p className="introDataTitle">AI</p>
-              <p className="introDataSubTitle">POWERED</p>
-            </div>
-            <div className="introDataContent">
-              <p className="introDataTitle">6</p>
-              <p className="introDataSubTitle">MODULES</p>
-            </div>
-            <div className="introDataContent">
-              <p className="introDataTitle">1000+</p>
-              <p className="introDataSubTitle">QUESTIONS</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* Features Section */}
+<div className="featuresContainer">
+  <h2 className="featuresTitle">FEATURES</h2>
+  <div className="featuresGrid">
+    <div className="featureCard">
+      <img src="/icons/credit-score.png" alt="Credit Scoring Engine" className="featureIcon" />
+      <p className="featureText">Credit Scoring Engine</p>
+    </div>
+    <div className="featureCard">
+      <img src="/icons/ai-chatbot.png" alt="AI Chatbot Mentor" className="featureIcon" />
+      <p className="featureText">AI Chatbot Mentor</p>
+    </div>
+    <div className="featureCard">
+      <img src="/icons/gamification.png" alt="Gamification Learning" className="featureIcon" />
+      <p className="featureText">Gamified Learning</p>
+    </div>
+    <div className="featureCard">
+      <img src="/icons/fraud.png" alt="Smart Personal Finance Chatbot" className="featureIcon" />
+      <p className="featureText">Fraud Detection</p>
+    </div>
+    <div className="featureCard">
+      <img src="/icons/visualization.png" alt="Visualization" className="featureIcon" />
+      <p className="featureText">Smart Personal Dashboard</p>
+    </div>
+    <div className="featureCard">
+      <img src="/icons/multilanguage.png" alt="Multilanguage" className="featureIcon" />
+      <p className="featureText">Multilingual Support</p>
+    </div>
+  </div>
+</div>
+
       <p className="homePageTitle meetFriendsTitle" style={{ marginLeft: "8%" }}>
         MEET THE FRIENDS:
       </p>

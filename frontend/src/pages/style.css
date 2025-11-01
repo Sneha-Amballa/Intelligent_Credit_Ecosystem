@@ -10,22 +10,33 @@
   }
 
   .homepageTitleContainer {
-      height: 30rem;
+      height: 36rem;
       background: url(/bg/bg-homepage.png);
       display: flex;
       justify-content: center;
       align-items: center;
   }
+  /* 🔹 Logo size adjustments */
+.logo {
+  width: 35rem; /* Increased from ~20–23rem */
+  height: auto;
+  transition: transform 0.3s ease;
+  padding-right: 5rem;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
 
   .registerButton,
   .loginButton {
       display: flex;
-      width: 12.5625rem;
+      width: 12rem;
       height: 5.25rem;
       padding: 0.5rem 0.875rem;
       justify-content: center;
       align-items: center;
-      gap: 0.5rem;
+      gap: 1.5rem;
       flex-shrink: 0;
 
       border: 0px;
@@ -42,20 +53,34 @@
       box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
 
-  .registerButton {
-      background: #00DA23;
-      text-decoration: none;
+.registerButton {
+  background: #00C896;
+  color: #fff;
+  border: none;
+  transition: 0.3s;
+}
 
-  }
+.registerButton:hover {
+  background: #00a67e;
+  transform: translateY(-2px);
+}
 
-  .loginButton {
-      background: #0A007E;
-      text-decoration: none;
-  }
+.loginButton {
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.loginButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
 
   .buttonContainer {
       display: flex;
       justify-content: space-evenly;
+      gap: 5rem;
   }
 
   .introContainer {
@@ -228,4 +253,78 @@
     }
     
     
+}
+.featuresContainer {
+  background: #fff;
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.featuresTitle {
+  font-family: 'Londrina Solid', cursive;
+  font-size: 4rem;
+  -webkit-text-stroke: 3px var(--purple);
+  margin-bottom: 3rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  justify-items: center;
+}
+
+.featureCard {
+  background: linear-gradient(145deg, #849cd9, #102A5C);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  width: 16rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 200, 150, 0.15);
+  text-align: center;
+  backdrop-filter: blur(8px);
+}
+
+.featureCard:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(145deg, #12336E, #1A4B9E);
+  box-shadow: 0 0 16px rgba(0, 200, 150, 0.35);
+}
+
+
+.featureIcon {
+  width: 12rem;
+  height: 12rem;
+}
+
+.featureText {
+  font-family: 'Barlow', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .featuresTitle {
+    font-size: 3rem;
+  }
+
+  .featureCard {
+    width: 90%;
+  }
 }

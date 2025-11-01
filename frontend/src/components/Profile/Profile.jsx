@@ -88,7 +88,7 @@ const UserProfileStats = () => {
               </li>
               <li>
                 <a
-                  href="mailto:financefriends0@gmail.com"
+                  href="sneha.amballa0804@gmail.com"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   Contact us

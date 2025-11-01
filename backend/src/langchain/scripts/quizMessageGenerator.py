@@ -1,17 +1,22 @@
 import os
+import sys
+import json
 from dotenv import load_dotenv
-import openai
-from langchain.chat_models import ChatOpenAI
-from langchain.output_parsers import StructuredOutputParser, ResponseSchema
+from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
-import sys, json
 from langchain.chains import LLMChain
 
-llm = ChatOpenAI(temperature=0, model_name='gpt-4')
-
+# -----------------------------
+# Load API key
+# -----------------------------
 load_dotenv("../../../.env")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
+if not api_key:
+    raise ValueError("❌ OPENAI_API_KEY not found in .env file!")
 
+# -----------------------------
+# Read command-line arguments
+# -----------------------------
 location_name = str(sys.argv[1])
 friend_name = str(sys.argv[2])
 friend_type = str(sys.argv[3])
@@ -22,66 +27,92 @@ current_block_ind = int(sys.argv[7])
 user_age = int(sys.argv[8])
 user_language = str(sys.argv[9])
 
-
-#file_path = '../docs/' + location_name + '.json'
-file_path = 'src/langchain/docs/' + location_name + '.json'
-
-with open(file_path, 'r') as file:
+# -----------------------------
+# Load JSON content
+# -----------------------------
+file_path = f"src/langchain/docs/{location_name}.json"
+with open(file_path, "r", encoding="utf-8") as file:
     lessons = json.load(file)
 
-lesson_name = lessons[current_lesson_ind]['name']
 lesson = lessons[current_lesson_ind]
+mini_lesson = lesson["mini_lessons"][current_minilesson_ind]
+mini_lesson_goal = mini_lesson["content"]
 
-mini_lesson_name = lesson['mini_lessons'][current_minilesson_ind]['name']
-mini_lesson_goal = lesson['mini_lessons'][current_minilesson_ind]['content']
+# -----------------------------
+# Initialize model
+# -----------------------------
+llm = ChatOpenAI(model="gpt-4", temperature=0).bind(max_output_tokens=2048)
 
-# Define response schemas for the quiz question components
-response_schemas = [
-    ResponseSchema(name="question", description="The quiz question text"),
-    ResponseSchema(name="type", description="The type of question (True/False, Multiple Choice, Fill-in-the-Blank)"),
-    ResponseSchema(name="correct_answer", description="The correct answer for the quiz question"),
-    ResponseSchema(name="options", description="A list of options for multiple choice questions written as a list of strings")
+# -----------------------------
+# Define prompt
+# -----------------------------
+quiz_prompt_template = """
+You are {friend_name}, a {friend_type} from {location_name}, teaching children about finance and {module_name}.
+
+Generate exactly 5 quiz questions based on the following content:
+"{mini_lesson_goal}"
+
+Follow this format strictly:
+[
+  {{
+    "type": "True/False" | "Multiple Choice" | "Open-ended",
+    "question": "string",
+    "options": ["string", ...],    // Empty list if not applicable
+    "correct_answer": "string"
+  }},
+  ...
 ]
 
-# Create an output parser from the response schemas
-output_parser = StructuredOutputParser.from_response_schemas(response_schemas)
-
-
-format_instructions = output_parser.get_format_instructions()
-
-quiz_prompt_template = """
-    Generate a 5-question quiz from the provided lecture content. Format each question as a JSON object with 'type', 'question', 'correct_answer', and 'options' (if applicable). Include two True/False questions, two multiple-choice questions with four options each, and one open-ended question.
-
-    Ensure that the True/False statements and open-ended questions are factual based on the lecture content. For multiple-choice questions, only one option should be correct. IF OPTIONS ARE PRESENT, THEY SHOULD BE WRITTEN AS A LIST OF STRINGS. Ensure that statements or questions align logically with their respective types. Ensure that correct answer in multiple-choice questions is included in options.
-    
-    Tailor the questions to suit {user_age}-year-olds and write them in {user_language}. 
-
-    As {friend_name}, a {friend_type} living in {location_name}, you are educating children about finance and {module_name}.
-
-    Lecture Content for Quiz: {mini_lesson_goal}
-
-    {format_instructions}
-
-    Always denote currency exclusively in Euros.
-    Present the final output as a list of JSON objects, enclosed in square brackets.
+Rules:
+- Include 2 True/False, 2 Multiple Choice (4 options each), and 1 Open-ended question.
+- Ensure only one correct answer for multiple-choice.
+- For open-ended, leave "options": [].
+- Currency should be in Euros (€) only.
+- Tailor to {user_age}-year-olds.
+- Write everything in {user_language}.
+- Return ONLY a JSON array (no text before or after).
 """
 
-
 prompt = PromptTemplate(
-    input_variables=["location_name", "friend_name", "friend_type", "module_name", "mini_lesson_goal", "user_age", "user_language", "format_instructions"],
-    template=quiz_prompt_template
+    input_variables=[
+        "friend_name",
+        "friend_type",
+        "location_name",
+        "module_name",
+        "mini_lesson_goal",
+        "user_age",
+        "user_language",
+    ],
+    template=quiz_prompt_template,
 )
+
 chain = LLMChain(llm=llm, prompt=prompt)
+
+# -----------------------------
+# Run the model
+# -----------------------------
 response = chain.run(
-    location_name=location_name,
     friend_name=friend_name,
     friend_type=friend_type,
+    location_name=location_name,
     module_name=module_name,
     mini_lesson_goal=mini_lesson_goal,
     user_age=user_age,
     user_language=user_language,
-    format_instructions=format_instructions
 )
-print(json.dumps(response))
 
+# -----------------------------
+# Parse and clean output
+# -----------------------------
+try:
+    parsed_response = json.loads(response)
+    if not isinstance(parsed_response, list):
+        raise ValueError("Expected a JSON array of quiz questions.")
+except Exception:
+    parsed_response = {"error": "Invalid JSON output", "raw_output": response}
+
+# -----------------------------
+# Output final JSON
+# -----------------------------
+print(json.dumps(parsed_response, ensure_ascii=False, indent=2))
 sys.stdout.flush()

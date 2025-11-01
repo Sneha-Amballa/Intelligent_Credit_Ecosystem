@@ -1,3 +1,4 @@
+
 .lessonsWrapper {
     display: flex;
     height: 100vh;
@@ -8,7 +9,8 @@
 .lessonsContainer {
     height: 90%;
     width: 70%;
-    background-color: var(--purple);
+    background: linear-gradient(135deg, #0A1A3E, #1E7F8A);
+
     border-radius: 0.6875rem;
 }
 
@@ -24,7 +26,7 @@
     flex-direction: row;
     align-items: center;
     height: 5rem;
-    background-color: var(--yellow);
+    background: linear-gradient(90deg, #1E7F8A, #24A0A3);
 }
 
 .leaderboardHeaderText {
@@ -57,23 +59,47 @@
 
 .leaderboardText,
 .leaderboardTextyellow {
-    color: var(--purple);
     font-family: Londrina Solid;
     font-size: 1.125rem;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background-color: white;
     text-align: center;
     padding: 0.6rem;
+    border-radius: 0.4rem;
 }
 
+.leaderboardBody::-webkit-scrollbar {
+    width: 6px;
+}
+
+.leaderboardBody::-webkit-scrollbar-thumb {
+    background-color: #1E7F8A;
+    border-radius: 10px;
+}
+
+
+/* Normal leaderboard rows */
+.leaderboardText {
+    background-color: #143C68; /* deep blue background */
+    color: #0f828b;            /* light text */
+}
+
+/* Highlighted user row */
 .leaderboardTextyellow {
-    background-color: var(--yellow);
+    background-color: #24A0A3;
+    color: #0A1A3E;
+}
+
+
+.leaderboardTextyellow {
+    background-color: #24A0A3;  /* teal highlight for user row */
+
 }
 
 .leaderboardHeaderText {
-    color: var(--gold, #FFC700);
+    color: #00E6A8;   /* aqua accent for headers */
+
     font-family: Londrina Solid;
     font-size: 1.125rem;
     font-style: normal;
@@ -102,7 +128,7 @@
 }
 
 .filtersText {
-    color: var(--purple);
+    color: white;
     font-family: "Londrina Solid";
     font-size: 1.125rem;
     font-style: normal;
@@ -116,7 +142,7 @@
     height: 23px;
     width: 60px;
     color: white;
-    background-color: var(--purple);
+    background: linear-gradient(135deg, #0A1A3E, #1E7F8A);
     font-family: "Londrina Solid";
     font-size: 1.125rem;
     font-style: normal;

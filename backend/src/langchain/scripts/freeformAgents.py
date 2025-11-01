@@ -1,21 +1,36 @@
-# this is just a test script to see if the agent works and how well it picks which tool to use
-
-from langchain.agents import load_tools
-from langchain.agents import initialize_agent
-import openai
-from langchain.llms.openai import OpenAI
-from dotenv import load_dotenv
 import os
+import sys
+import json
+from dotenv import load_dotenv
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_core.prompts import PromptTemplate
+from langchain_core.runnables import RunnableSequence
 
+# Load environment variables
 load_dotenv("../../../.env")
-openai.api_key = os.getenv("OPENAI_API_KEY")
 
-llm = OpenAI(temperature=0)
-tools = load_tools(["wikipedia", "dalle-image-generator"])
+# Get Gemini API key
+api_key = os.getenv("GEMINI_API_KEY")
 
-agent = initialize_agent(tools, 
-                        llm, 
-                        agent = "zero-shot-react-description",
-                        verbose=True)
+# Initialize the Gemini model
+llm = ChatGoogleGenerativeAI(
+    model="gemini-pro",
+    google_api_key=api_key,
+    temperature=0.7
+)
 
-agent.run("Create an image of a cat in a hat.")
+
+# Create prompt
+prompt = PromptTemplate(
+    input_variables=["user_input"],
+    template="You are a helpful AI assistant. Answer this question clearly:\n\n{user_input}"
+)
+
+# Chain using the new Runnable API
+chain = RunnableSequence(first=prompt, last=llm)
+
+# Example user input
+user_input = "Explain LangChain in simple words."
+response = chain.invoke({"user_input": user_input})
+
+print("\nAI Response:\n", response)

@@ -1,19 +1,20 @@
-# This is just ALPHA version of the script. It is not finished yet.
-# It lacks some features like chat history as context and agents usage like Google search, Wikipedia, etc.
-
+# Alpha version: freeform chat with personality and safety filters
 import os
+import sys
+import json
 from dotenv import load_dotenv
-import openai
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI
 from langchain.prompts import PromptTemplate
-import sys, json
 from langchain.chains import LLMChain
 
+# Load environment variables
 load_dotenv("../../../.env")
-openai.api_key = os.getenv("OPENAI_API_KEY")
+api_key = os.getenv("OPENAI_API_KEY")
 
-llm = ChatOpenAI(temperature=0.7, model_name='gpt-4')
+# Initialize LLM (ChatGPT)
+llm = ChatOpenAI(model_name="gpt-4o-mini", temperature=0.7, api_key=api_key)
 
+# Input arguments
 username = str(sys.argv[1])
 location_name = "Imagination Jungle"
 friend_name = "Cleo"
@@ -23,31 +24,38 @@ user_language = str(sys.argv[3])
 userMessage = str(sys.argv[4])
 history = str(sys.argv[5])
 
-
+# Prompt template
 templateText = """
-    You are {friend_name}, a wise and up-to-date {friend_type} living in the {location_name}. Unlike other modules, here you engage in freeform conversations about anything {username}, aged {user_age}, is curious about, not just finance. Your responses are in {user_language}.
+You are {friend_name}, a wise and up-to-date {friend_type} living in the {location_name}.
+You engage in freeform, thoughtful, and positive conversations with {username}, aged {user_age}.
+Respond in {user_language}.
 
-    {username}'s Question: "{userMessage}"
+{username}'s Question: "{userMessage}"
 
-    For context, here are the last 3 messages in the chat history (do not repeat these messages in your response):
-    {history}
+Recent chat history (context only; don't repeat):
+{history}
 
-    If {username}'s message is inappropriate or offensive :
-        - Do not respond to the specific content of the message.
-        - Give a friendly reminder about the importance of respect and kindness in conversations.
-        - Share an informative 'ted talk' style message about positive communication.
+If {username}'s message is inappropriate or offensive:
+    - Kindly remind them about respect and positive communication.
+    - Share a short 'TED talk' style insight about kindness and learning.
 
-    If the message is appropriate:
-        - Engage in a lively, informative conversation.
-        - Remember, your conversations can go beyond finance and cover a wide range of topics.
+If the message is appropriate:
+    - Respond naturally, engagingly, and informatively.
+    - You may explore any topic, not just finance.
 
-    Your goal is to make the chat engaging and educational, encouraging {username} to learn and explore in a respectful and positive environment.
+Your goal: Make {username} feel curious, respected, and inspired to learn more.
 """
 
+# Define prompt
 prompt = PromptTemplate(
-    input_variables=["username", "location_name", "friend_name", "friend_type", "user_age", "user_language", "userMessage", "history"],
+    input_variables=[
+        "username", "location_name", "friend_name", "friend_type",
+        "user_age", "user_language", "userMessage", "history"
+    ],
     template=templateText
 )
+
+# Create and run LLM chain
 chain = LLMChain(llm=llm, prompt=prompt)
 response = chain.run(
     username=username,
@@ -59,6 +67,7 @@ response = chain.run(
     userMessage=userMessage,
     history=history
 )
-print(json.dumps(response))
 
+# Output clean JSON
+print(json.dumps({"response": response}, ensure_ascii=False))
 sys.stdout.flush()
