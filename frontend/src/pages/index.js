@@ -61,7 +61,7 @@ function HomePage() {
 </div>
 
       <p className="homePageTitle meetFriendsTitle" style={{ marginLeft: "8%" }}>
-        MEET THE FRIENDS:
+        MEET THE FRIENDS
       </p>
       <div>
         {landData.map((land) => (
